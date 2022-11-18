@@ -16,6 +16,14 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('user.home');
 });
+Route::get('/travail', function () {
+    return view('user.rechercheTravail');
+})->name('work');
+
+
+Route::get('/publisher', function () {
+    return view('user.addTravail');
+})->name("publisher");
 
 Route::middleware([
     'auth:sanctum',

@@ -307,3 +307,26 @@ nav .content .links {
     font-size: 45px;
     margin: 5px 0;
 }
+
+.sidebar .sidebar_widget {
+    margin-bottom: 35px;
+    clear: both;
+    width: 100%;
+}
+
+.sidebar h2,
+.sidebar .h2 {
+    margin-bottom: 20px;
+    font-size: 15px;
+}
+
+.sidebar .sidebar_widget .widget-content ul {
+    margin: 0 0 15px;
+    list-style: none;
+}
+
+.sidebar .sidebar_widget .widget-content ul li {
+    list-style: none;
+    padding: 3px 0;
+    font-size: 12px;
+}
