@@ -22,6 +22,9 @@ class CreateTravailfinCyclesTable extends Migration
             $table->string("annnee_etudes");
             $table->string("nbrs_pages");
             $table->string("path_document");
+            $table->boolean("status");
+            $table->bigInteger("viewCounter");
+
             $table->timestamps();
         });
     }

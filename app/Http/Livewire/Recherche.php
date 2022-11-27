@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use App\Models\TravailfinCycle;
+use Illuminate\Support\Facades\Redirect;
 use Livewire\Component;
 use Livewire\WithPagination;
 
@@ -23,8 +24,11 @@ class Recherche extends Component
         'categorie' => ['expect' => '']
     ];
 
-    public function mount()
+    public function viewCount($id)
     {
+
+      
+        return Redirect()->route("viewWorks", $id);
     }
     public function searchiTem($item)
     {
@@ -45,6 +49,7 @@ class Recherche extends Component
                     ->search(trim($this->searchs))
                     ->paginate($this->sort),
             ]
-        );
+        )->extends('layouts.user')
+            ->section('content');
     }
 }

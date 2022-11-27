@@ -21,7 +21,9 @@ class TravailfinCycleFactory extends Factory
             "annnee_etudes" => $this->faker->numberBetween(2010, 2022),
             "nbrs_pages"
             => $this->faker->numberBetween(80, 120),
-            "path_document" => "travail.pdf"
+            "path_document" => "travail.pdf",
+            "status" => 1,
+            "viewCounter" => 0,
         ];
     }
 }

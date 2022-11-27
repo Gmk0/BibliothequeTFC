@@ -15,11 +15,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('user.home');
-});
-Route::get('/travail', function () {
-    return view('user.rechercheTravail');
-})->name('work');
-Route::get('/viewWorks/{id}', \App\Http\Livewire\ViewWorks::class)->name('viewWorks');
+})->name('home');
+Route::get('/travail', \App\Http\Livewire\Recherche::class)->name('work');
 
 Route::get('/publisher', function () {
     return view('user.addTravail');
@@ -33,4 +30,5 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+    Route::get('/viewWorks/{id}', \App\Http\Livewire\ViewWorks::class)->name('viewWorks');
 });

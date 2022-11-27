@@ -10,7 +10,10 @@ class ViewWorks extends Component
     public $travail;
     public function mount($id)
     {
-        $this->travail = TravailfinCycle::find($id)->get();
+        $this->travail = TravailfinCycle::find($id);
+        $value = TravailfinCycle::find($id);
+        $value->viewCounter = $value->viewCounter + 1;
+        $value->update();
     }
     public function render()
     {

@@ -93,7 +93,7 @@
     <h3 class="text-center">Last Publication</h3>
     <div class="row">
 
-        @for ($i = 0; $i < 10; $i++) <div class="col-md-6">
+        @for ($i = 0; $i < 10; $i++) <div class="col-md-">
             <div class="card">
 
                 <div class="card-body">
