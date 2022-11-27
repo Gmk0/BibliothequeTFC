@@ -5,11 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class TravailfinCycle extends Model
+class travail extends Model
 {
     use HasFactory;
-
-
     protected $fillable = [
         "sujet",
         "categorie",
@@ -17,7 +15,9 @@ class TravailfinCycle extends Model
         "etudiant",
         "annnee_etudes",
         "nbrs_pages",
-        "path_document"
+        "path_document",
+        "status",
+        "viewCounter"
     ];
 
     public function scopeSearch($query, $term)

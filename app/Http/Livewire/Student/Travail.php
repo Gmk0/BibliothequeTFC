@@ -2,8 +2,9 @@
 
 namespace App\Http\Livewire\Student;
 
+use App\Models\travail as ModelsTravail;
 use Livewire\Component;
-use App\Models\TravailfinCycle;
+
 use Livewire\WithFileUploads;
 
 
@@ -42,7 +43,7 @@ class Travail extends Component
             "nbrs_pages" => $this->travail['pages'],
             "path_document" => $fileName
         ];
-        TravailfinCycle::create($data);
+        ModelsTravail::create($data);
         $this->travail = [];
         $this->file = "";
     }

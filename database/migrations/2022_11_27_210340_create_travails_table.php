@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTravailfinCyclesTable extends Migration
+class CreateTravailsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,9 @@ class CreateTravailfinCyclesTable extends Migration
      */
     public function up()
     {
-        Schema::create('travailfin_cycles', function (Blueprint $table) {
+        Schema::create('travails', function (Blueprint $table) {
             $table->id();
+        
             $table->string("sujet");
             $table->string("categorie");
             $table->string("faculte");
@@ -24,7 +25,6 @@ class CreateTravailfinCyclesTable extends Migration
             $table->string("path_document");
             $table->boolean("status");
             $table->bigInteger("viewCounter");
-
             $table->timestamps();
         });
     }
@@ -36,6 +36,6 @@ class CreateTravailfinCyclesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('travailfin_cycles');
+        Schema::dropIfExists('travails');
     }
 }

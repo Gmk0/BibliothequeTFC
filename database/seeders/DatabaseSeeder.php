@@ -13,6 +13,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-         \App\Models\TravailfinCycle::factory(100)->create();
+        \App\Models\travail::factory(100)->create();
     }
 }

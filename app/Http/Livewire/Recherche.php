@@ -2,7 +2,7 @@
 
 namespace App\Http\Livewire;
 
-use App\Models\TravailfinCycle;
+use App\Models\travail;
 use Illuminate\Support\Facades\Redirect;
 use Livewire\Component;
 use Livewire\WithPagination;
@@ -27,7 +27,7 @@ class Recherche extends Component
     public function viewCount($id)
     {
 
-      
+
         return Redirect()->route("viewWorks", $id);
     }
     public function searchiTem($item)
@@ -42,7 +42,7 @@ class Recherche extends Component
         return view(
             'livewire.recherche',
             [
-                "works" => TravailfinCycle::when($this->categorie, function ($q) {
+                "works" => travail::when($this->categorie, function ($q) {
                     $q->where("faculte", 'LIKE', "%{$this->categorie}%");
                 })->orWhere("categorie", 'LIKE', "%{$this->sujet}%")
                     ->orderBy($this->name, $this->order)
