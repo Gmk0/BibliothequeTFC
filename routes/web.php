@@ -19,7 +19,7 @@ Route::get('/', function () {
 Route::get('/travail', function () {
     return view('user.rechercheTravail');
 })->name('work');
-
+Route::get('/viewWorks/{id}', \App\Http\Livewire\ViewWorks::class)->name('viewWorks');
 
 Route::get('/publisher', function () {
     return view('user.addTravail');

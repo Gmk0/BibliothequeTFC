@@ -14,11 +14,22 @@ class Recherche extends Component
     public $order = "asc";
     public $sort = 10;
     public $name = "sujet";
+    public $sujet;
 
     protected $paginationTheme = "bootstrap";
+    protected $queryString = [
+        'searchs' => ['expect' => ''],
+        'categorie' => ['expect' => ''],
+        'categorie' => ['expect' => '']
+    ];
 
     public function mount()
     {
+    }
+    public function searchiTem($item)
+    {
+
+        $this->sujet = $item;
     }
 
     public function render()
@@ -29,7 +40,7 @@ class Recherche extends Component
             [
                 "works" => TravailfinCycle::when($this->categorie, function ($q) {
                     $q->where("faculte", 'LIKE', "%{$this->categorie}%");
-                })
+                })->orWhere("categorie", 'LIKE', "%{$this->sujet}%")
                     ->orderBy($this->name, $this->order)
                     ->search(trim($this->searchs))
                     ->paginate($this->sort),

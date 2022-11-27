@@ -16,8 +16,8 @@
 
 <body>
 
-    <div class="wrapper">
-        <nav>
+    <div class="wrapper sticky-top">
+        <nav class="">
             <input type="checkbox" id="show-search">
             <input type="checkbox" id="show-menu">
             <label for="show-menu" class="menu-icon"><i class="fas fa-bars"></i></label>

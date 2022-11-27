@@ -25,6 +25,8 @@ class TravailfinCycle extends Model
         $term = "%$term%";
         $query->where(function ($query) use ($term) {
             $query->where('sujet', 'like', $term);
+            $query->orWhere('etudiant', 'like', $term);
+            $query->orWhere('categorie', 'like', $term);
         });
     }
 }
