@@ -14,9 +14,6 @@ class ViewWorks extends Component
     public function mount($id)
     {
         $this->travail = travail::find($id);
-        $value = travail::find($id);
-        $value->viewCounter = $value->viewCounter + 1;
-        $value->update();
         consultation::create([
             'users_id' => Auth::user()->id,
             'travails_id' => $id,

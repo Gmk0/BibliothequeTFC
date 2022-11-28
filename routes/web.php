@@ -32,3 +32,9 @@ Route::middleware([
     })->name('dashboard');
     Route::get('/viewWorks/{id}', \App\Http\Livewire\ViewWorks::class)->name('viewWorks');
 });
+
+
+
+Route::get('/admin', function () {
+    return view('admin.home');
+})->name('homeAdmin');

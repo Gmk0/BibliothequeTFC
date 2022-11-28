@@ -15,7 +15,7 @@ class CreateTravailsTable extends Migration
     {
         Schema::create('travails', function (Blueprint $table) {
             $table->id();
-        
+
             $table->string("sujet");
             $table->string("categorie");
             $table->string("faculte");
@@ -25,6 +25,7 @@ class CreateTravailsTable extends Migration
             $table->string("path_document");
             $table->boolean("status");
             $table->bigInteger("viewCounter");
+            $table->foreignId('domaine_expertises_id')->nullable();
             $table->timestamps();
         });
     }

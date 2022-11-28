@@ -1080,6 +1080,15 @@ select {
 .float-right {
   float: right;
 }
+.m-1 {
+  margin: 0.25rem;
+}
+.m-4 {
+  margin: 1rem;
+}
+.m-0 {
+  margin: 0px;
+}
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -1159,14 +1168,20 @@ select {
 .mt-auto {
   margin-top: auto;
 }
-.ml-5 {
-  margin-left: 1.25rem;
-}
 .mb-0 {
   margin-bottom: 0px;
 }
 .-mt-px {
   margin-top: -1px;
+}
+.ml-auto {
+  margin-left: auto;
+}
+.mr-1 {
+  margin-right: 0.25rem;
+}
+.mb-2 {
+  margin-bottom: 0.5rem;
 }
 .block {
   display: block;
@@ -1535,6 +1550,9 @@ select {
 }
 .p-6 {
   padding: 1.5rem;
+}
+.p-3 {
+  padding: 0.75rem;
 }
 .px-4 {
   padding-left: 1rem;
