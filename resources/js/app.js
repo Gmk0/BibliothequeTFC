@@ -7,6 +7,7 @@ window.Alpine = Alpine;
 Alpine.start();
 window.$ = require("jquery");
 window.Swal = require("sweetalert2");
+window.toastr = require("toastr");
 
 import "admin-lte/plugins/bootstrap/js/bootstrap.bundle";
 import "admin-lte/dist/js/adminlte.min.js";

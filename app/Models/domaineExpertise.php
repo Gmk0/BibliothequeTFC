@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class domaineExpertise extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'intitule',
+        'status',
+    ];
 }

@@ -38,3 +38,6 @@ Route::middleware([
 Route::get('/admin', function () {
     return view('admin.home');
 })->name('homeAdmin');
+
+
+require 'admin.php';

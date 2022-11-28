@@ -40,7 +40,7 @@ class Recherche extends Component
     {
 
         return view(
-            'livewire.recherche',
+            'livewire.Student.recherche',
             [
                 "works" => travail::when($this->categorie, function ($q) {
                     $q->where("faculte", 'LIKE', "%{$this->categorie}%");

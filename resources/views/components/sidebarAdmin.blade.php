@@ -45,15 +45,23 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="#" class="nav-link active">
+                            <a href="#" class="nav-link ">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Active Page</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="{{route('domaineExpertise')}}"
+                                class="nav-link @if(request()->routeIs('domaineExpertise')) active @endif">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Inactive Page</p>
+                                <p>Domaine Epxertise</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{route('worksList')}}"
+                                class="nav-link @if(request()->routeIs('worksList')) active @endif">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Travaux</p>
                             </a>
                         </li>
                     </ul>
