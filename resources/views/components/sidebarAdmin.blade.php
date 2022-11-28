@@ -64,6 +64,13 @@
                                 <p>Travaux</p>
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a href="{{route('student')}}"
+                                class="nav-link @if(request()->routeIs('student')) active @endif">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Etudiant</p>
+                            </a>
+                        </li>
                     </ul>
                 </li>
                 <li class="nav-item">

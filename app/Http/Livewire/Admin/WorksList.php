@@ -12,6 +12,7 @@ class WorksList extends Component
 
     protected $paginationTheme = "bootstrap";
     public  $search = "";
+    public $sort = 15;
     public  $selection = [];
 
 
@@ -23,8 +24,18 @@ class WorksList extends Component
         $this->selection = [];
     }
 
-    public function activeMultiple(array $id)
+
+    public function activeMultiples(array $id)
     {
+        travail::whereIn('id', $id)->update([
+            'status' => 1,
+        ]);
+        $this->selection = [];
+    }
+
+    public function desactiveMultiple(array $id)
+    {
+
         travail::whereIn('id', $id)->update([
             'status' => 0,
         ]);
@@ -39,7 +50,7 @@ class WorksList extends Component
     {
         return view('livewire.admin.works-list', [
             'travaux' => travail::search(trim($this->search))
-                ->paginate(15),
+                ->paginate($this->sort),
         ])
             ->extends('layouts.admin')
             ->section('content');

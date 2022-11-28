@@ -15,11 +15,15 @@
     </div>
     <div x-data="{selection: @entangle('selection').defer}" class=" mt-5">
 
-        <div x-show="selection.length > 0" class=" m-2 p-2">
+        <div class="d-flex m-2 p-2">
 
-            <button x-on:click="$wire.deleteTravaux(selection)"
+            <button x-show="selection.length > 0" x-on:click="$wire.deleteTravaux(selection)"
                 class="btn btn-outline-danger mr-2">Supprimer</button><br>
-            <button x-on:click="$wire.activeMultiple(selection)" class="btn btn-outline-success">Desactiver</button>
+            <button x-show="selection.length > 0" x-on:click="$wire.desactiveMultiple(selection)"
+                class="btn btn-outline-warning mr-2">Desactiver</button>
+            <br>
+            <button x-show="selection.length > 0" x-on:click="$wire.activeMultiples(selection)"
+                class="btn btn-outline-success">activer</button>
 
         </div>
 
@@ -29,7 +33,17 @@
                     <div class="card-header">
                         <h3 class="card-title">Travail</h3>
 
-                        <div class="card-tools">
+                        <div class="card-tools d-flex">
+                            <div class="input-group input-group-sm col-md-3">
+
+                                <select class="form-control" name="" id="" wire:model.debounce.800ms="sort">
+
+                                    <option value="10">10</option>
+                                    <option value="50">50</option>
+                                    <option value="75">75</option>
+                                    <option value="100">100</option>
+                                </select>
+                            </div>
                             <div class="input-group input-group-sm" style="width: 300px;">
                                 <input type="text" name="table_search" class="form-control float-right"
                                     placeholder="Search" wire:model.debounce.800ms="search">
@@ -68,11 +82,11 @@
                                     <td>{{$travail->categorie}}</td>
                                     @if($travail->status ==1)
                                     <td><button class="btn"><span
-                                                class="badge badge-pill badge-warning">desactiver</span></button>
+                                                class="badge badge-pill badge-success">activer</span></button>
                                     </td>
                                     @else
                                     <td> <button class="btn"><span
-                                                class="badge badge-pill badge-success">activer</span></button>
+                                                class="badge badge-pill badge-warning">desactiver</span></button>
                                     </td>
                                     @endif
 
