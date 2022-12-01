@@ -2,8 +2,8 @@
 @section('title','etudiant')
 @section("content")
 
-<div class="container mt-5 text-center">
-    <h2 class="mb-4">
+<div class="container-fluid mt-5">
+    {{-- <h2 class="mb-4">
         Laravel 7 Import and Export CSV & Excel to Database Example
     </h2>
     <form action="{{ route('file-import') }}" method="POST" enctype="multipart/form-data">
@@ -16,7 +16,8 @@
         </div>
         <button class="btn btn-primary">Import data</button>
         <a class="btn btn-success" href="{{ route('file-export') }}">Export data</a>
-    </form>
+    </form>--}}
+    @livewire("admin.student-list")
 </div>
 
 @endsection

@@ -17,4 +17,14 @@ class etudiant extends Model
         "email",
         "password",
     ];
+
+    public function scopeSearch($query, $term)
+    {
+        $term = "%$term%";
+        $query->where(function ($query) use ($term) {
+
+            $query->orWhere('name', 'like', $term);
+            $query->orWhere('lastname', 'like', $term);
+        });
+    }
 }

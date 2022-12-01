@@ -12,9 +12,13 @@ class WorksList extends Component
 
     protected $paginationTheme = "bootstrap";
     public  $search = "";
-    public $sort = 15;
+    public $check;
+    public $sort = 25;
     public  $selection = [];
 
+    protected $queryString = [
+        'search' => ['expect' => ''],
+    ];
 
 
     public function deleteTravaux(array $id)
@@ -22,6 +26,7 @@ class WorksList extends Component
 
         travail::destroy($id);
         $this->selection = [];
+        $this->check = "";
     }
 
 
@@ -31,6 +36,7 @@ class WorksList extends Component
             'status' => 1,
         ]);
         $this->selection = [];
+        $this->check = "";
     }
 
     public function desactiveMultiple(array $id)
@@ -40,6 +46,7 @@ class WorksList extends Component
             'status' => 0,
         ]);
         $this->selection = [];
+        $this->check = "";
     }
 
     public function updatingSearch()

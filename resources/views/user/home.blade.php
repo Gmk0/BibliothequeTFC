@@ -1,8 +1,8 @@
 @extends("layouts.user")
 
 @section("content")
-<section class=" container-fluid rounded">
-    <div id="carouselBasicExample" class="carousel slide carousel-fade rounded" data-ride="carousel">
+<section class=" container-fluid vh-90 mb-3">
+    <div id="carouselBasicExample" class="carousel slide carousel-fade" data-ride="carousel">
         <!-- Indicators -->
         <div class="carousel-indicators">
             <button type="button" data-target="#carouselBasicExample" data-slide-to="0" class="active"
@@ -59,51 +59,33 @@
 </section>
 
 
-<section class="container-fluid mt-2 vh-100">
+<section class="container-fluid   vh-100">
 
-    <div class="row">
-        <div class="col-md-6">
-            <div class="card">
-                <div class="card-body">
-                    <blockquote class="blockquote mb-0">
-                        <p>Quote</p>
-                        <footer class="blockquote-footer">Footer <cite title="Source title">Source title</cite></footer>
-                    </blockquote>
-                </div>
-            </div>
+    <div class="row mt-5 justify-content-between">
+        <div class="col-md-4 ">
+            <img src="{{asset('images/read.svg')}}" width="700px" alt="" class="rounded">
         </div>
-        <div class="col-md-6">
-            <div class="card" style="background-color:orangered; border-color:darkblue;">
-                <img class="card-img-top" src="holder.js/100x180/" alt="Title">
-                <div class="card-body">
+        <div class="col-md-6 m-5 bg-white">
+            <h4 class="text-center">Decouvertes</h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, sit. Porro dolor dolores, minus enim
+                pariatur, optio iure reprehenderit assumenda neque harum velit corporis beatae quaerat asperiores
+                libero. Aliquam, sit?</p>
 
-                    <p class="card-text">
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempora labore optio sapiente odio
-                        harum? Aliquam amet, repudiandae est molestiae magni numquam ducimus quia incidunt similique
-                        assumenda, debitis vel provident aut!
-                    </p>
-                </div>
-            </div>
+
         </div>
     </div>
+
 </section>
 
-<section class="container-fluid vh-100">
+<section class="container vh-100">
 
     <h3 class="text-center">Last Publication</h3>
     <div class="row">
 
-        @for ($i = 0; $i < 10; $i++) <div class="col-md-">
-            <div class="card">
+        <div>
+            
+        </div>
 
-                <div class="card-body">
-                    <h5 class="card-title">Title</h5>
-                    <p class="card-text">Content</p>
-                </div>
-
-            </div>
-    </div>
-    @endfor
 
     </div>
 </section>

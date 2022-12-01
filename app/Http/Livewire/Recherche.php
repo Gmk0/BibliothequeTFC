@@ -44,7 +44,9 @@ class Recherche extends Component
             [
                 "works" => travail::when($this->categorie, function ($q) {
                     $q->where("faculte", 'LIKE', "%{$this->categorie}%");
+                    $q->where("status", 1);
                 })->orWhere("categorie", 'LIKE', "%{$this->sujet}%")
+                    ->Where('status', 1)
                     ->orderBy($this->name, $this->order)
                     ->search(trim($this->searchs))
                     ->paginate($this->sort),

@@ -12,7 +12,17 @@
     @livewireStyles
     <link rel="stylesheet" href="stylefull.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-
+    <style>
+        #content {
+            visibility: hidden;
+        }
+    </style>
+    <script>
+        window.addEventListener("load", function(){
+            document.getElementById("loader_wrapper").style.display ="none";
+            document.getElementById("content").style.visibility ="visible";
+        })
+    </script>
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -46,7 +56,12 @@
             <!-- /.content-header -->
 
             <!-- Main content -->
-            <div class="content">
+            <div id="loader_wrapper" class="mt-5 text-center">
+                <div id="loader" class="loader">
+                </div>
+
+            </div>
+            <div class="content" id="content">
                 <div class="container-fluid">
 
                     @yield('content')
