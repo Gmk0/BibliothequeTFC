@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 </head>
 
-<body class="" style="background:#f8f9fa;">
+<body class="" style="background:#F5EFEF;">
 
     <x-navbarUser />
 

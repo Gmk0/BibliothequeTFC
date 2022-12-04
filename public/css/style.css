@@ -367,3 +367,19 @@ border-bottom: 3px solid #007bff;
     padding: 3px 0;
     font-size: 12px;
 }
+
+
+/*section*/
+
+.section{
+    
+    border-radius: 10px;
+    background: #fff;
+    border: 1px solid #707070;
+}
+.cardTravaux{
+    width: 646px;
+        height: 632px;
+        background: transparent;
+}
+

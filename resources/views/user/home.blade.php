@@ -1,7 +1,7 @@
 @extends("layouts.user")
 
 @section("content")
-<section class=" container-fluid vh-90 mb-3">
+<section class=" container-fluid  mb-3">
     <div id="carouselBasicExample" class="carousel slide carousel-fade" data-ride="carousel">
         <!-- Indicators -->
         <div class="carousel-indicators">
@@ -59,13 +59,14 @@
 </section>
 
 
-<section class="container-fluid   vh-100">
+<div class="container-fluid  rounded bg-white  p-3">
+
 
     <div class="row mt-5 justify-content-between">
         <div class="col-md-4 ">
-            <img src="{{asset('images/read.svg')}}" width="700px" alt="" class="rounded">
+            <img src="{{asset('images/read2.png')}}" width="600px" alt="" class="rounded">
         </div>
-        <div class="col-md-6 m-5 bg-white">
+        <div class="col-md-6 shadow m-5 p-3  bg-white rounded">
             <h4 class="text-center">Decouvertes</h4>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, sit. Porro dolor dolores, minus enim
                 pariatur, optio iure reprehenderit assumenda neque harum velit corporis beatae quaerat asperiores
@@ -75,17 +76,50 @@
         </div>
     </div>
 
+</div>
+
+<section class="container-fluid   p-2 rounded">
+
+    <div class="m-2">
+        <h3 class="text-start">Last Publication</h3>
+    </div>
+
+    <div class="row m-2">
+
+        @foreach ($lastTravails as $travail)
+        <div class="col-md-3">
+            <div class="card rounded">
+                <img class="card-img-top" src="{{asset('images/read2.png')}}" alt="Card image cap">
+                <div class="card-body">
+                    <h4 class="card-title"><b>{{$travail->sujet}}</b></h4>
+                    <p class="card-text">{{$travail->categorie}}</p>
+                    <p class="card-text"><span class="text-muted">{{$travail->created_at}}</span></p>
+                </div>
+
+            </div>
+
+        </div>
+        @endforeach
+
+
+    </div>
 </section>
 
-<section class="container vh-100">
-
-    <h3 class="text-center">Last Publication</h3>
-    <div class="row">
-
-        <div>
-            
-        </div>
-
+<section class="container  px-3">
+    <div class="mb-5">
+        <h3 class="text-start">Domaine D'Expertise</h3>
+    </div>
+    <div class="row mx-auto px-3">
+        @for ($i = 0; $i < 6; $i++) <div class="col-md-4 p-3 rounded-right">
+            <div class="card ">
+                <div class="card-body">
+                    <h4 class="card-title">Reseaux informatique</h4><span class="float-right"><i
+                            class="fa fa-arrow-right" aria-hidden="true"></i></span>
+                    <p class="card-text"><span class="text-muted">320</span></p>
+                </div>
+            </div>
+    </div>
+    @endfor
 
     </div>
 </section>

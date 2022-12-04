@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\EtudiantController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,9 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('user.home');
-})->name('home');
+Route::get('/', [EtudiantController::class, 'home'])->name('home');
+
+
 Route::get('/travail', \App\Http\Livewire\Recherche::class)->name('work');
 
 Route::get('/publisher', function () {
