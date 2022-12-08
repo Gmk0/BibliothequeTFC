@@ -37,6 +37,8 @@ nav .content .links {
     display: flex;
 }
 
+
+
 .content .logo a {
     color: #000;
     font-size: 30px;
@@ -63,40 +65,15 @@ text-decoration: none;
     display: none;
 }
 
-.content .links a.sign{
 
-    padding: 9px 20px;
-    color: rgb(7, 7, 7);
-    border-radius:5px;
-    border: 1px solid #007BFF ;
-}
-.content .links a.sign:hover {
 
-    padding: 9px 20px;
-    background: #007BFF;
-    color: #fff;
-    border-radius: 5px;
-}
-.content .links a.login {
 
-    padding: 9px 20px;
-    color: rgb(7, 7, 7);
-    border-radius: 5px;
-    border: 1px solid #eac808;
-}
-
-.content .links a.login:hover {
-
-    padding: 9px 20px;
-    background: #eac808;
-    color: #fff;
-    border-radius: 5px;
-}
 .content .links a.active{
 border-bottom: 3px solid #007bff;
 }
 
 .content .links li a.hover:hover,
+.login .linkLogin li a.hover:hover,
 .content .links li label:hover {
     
     border-bottom: 3px solid #007bff;
@@ -112,6 +89,7 @@ border-bottom: 3px solid #007bff;
     text-align: center;
 }
 
+.wrapper .user-icon,
 .wrapper .menu-icon {
     display: none;
 }
@@ -218,6 +196,7 @@ border-bottom: 3px solid #007bff;
         margin-left: 30px;
     }
 
+    .login .linkLogin li a,
     .content .links li a {
         padding: 8px 13px;
     }
@@ -232,6 +211,7 @@ border-bottom: 3px solid #007bff;
 }
 
 @media screen and (max-width: 900px) {
+    .wrapper .user-icon,
     .wrapper .menu-icon {
         display: block;
     }
@@ -239,7 +219,11 @@ border-bottom: 3px solid #007bff;
     .wrapper #show-menu:checked~.menu-icon i::before {
         content: "\f00d";
     }
-
+    .wrapper #show-login:checked~.user-icon i::before {
+        content: "\f00d";
+    }
+  
+  
     nav .content .links {
         display: block;
         position: fixed;
@@ -255,14 +239,60 @@ border-bottom: 3px solid #007bff;
         transition: all 0.3s ease;
     }
 
+    nav .login .linkLogin{
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        background: #f0f4f8;
+        height: 100%;
+        width: 80%;
+        top: 70px;
+        right:-100%;
+        margin-right: 0;
+        max-width: 300px;
+        overflow-y: auto;
+        padding-bottom: 100px;
+        transition: all 0.3s ease;
+    }
+
+
     nav #show-menu:checked~.content .links {
         left: 0%;
     }
+    nav #show-login:checked~.login .linkLogin {
+        right: 0%;
+        
+    }
+    .login .linkLogin li{
+        margin: 10px 15px;
+    }
+    .login .linkLogin li a.hover:hover{
+           
+    border-bottom: none;
+    }
+    .login .linkLogin li.sign {
+           
+        border: 1px solid blue;
+        border-radius: 10px;
+        text-align: center;
+        margin: 10px 10px;
+    }
+    .login .linkLogin li.login {
+           
+        border: 1px solid rgb(222, 247, 84);
+        border-radius: 10px;
+        text-align: center;
+        margin: 10px 10px;
+    }
 
+
+   
     .content .links li {
         margin: 15px 20px;
     }
 
+
+    .login .linkLogin li a,
     .content .links li a,
     .content .links li label {
         line-height: 40px;
@@ -278,6 +308,7 @@ border-bottom: 3px solid #007bff;
   
 
     /* dropdown responsive code start */
+
     .content .links ul,
     .content .links ul ul {
         position: static;
@@ -314,11 +345,12 @@ border-bottom: 3px solid #007bff;
     .content .logo a {
         font-size: 27px;
     }
-
+    .wrapper .user-icon,
     .wrapper .search-box {
         max-width: calc(100% - 70px);
     }
 
+    
     .wrapper .search-box .go-icon {
         width: 30px;
         right: 0;
@@ -383,3 +415,23 @@ border-bottom: 3px solid #007bff;
         background: transparent;
 }
 
+
+/*login */
+nav .login .linkLogin {
+    display: flex;
+    margin-left: 80px;
+}
+
+nav .login .linkLogin li{
+    list-style: none;
+    line-height: 70px;
+}
+nav .login .linkLogin li a{
+    color: #000;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 9px 17px;
+    border-radius: 0px;
+text-decoration: none;
+    transition: all 0.2s ease;
+}
