@@ -30,10 +30,10 @@ class Recherche extends Component
 
         return Redirect()->route("viewWorks", $id);
     }
-    public function searchiTem($item)
+    public function searchiTem()
     {
 
-        $this->sujet = $item;
+        return $this->searchs;
     }
 
     public function render()
@@ -48,7 +48,7 @@ class Recherche extends Component
                 })->orWhere("categorie", 'LIKE', "%{$this->sujet}%")
                     ->Where('status', 1)
                     ->orderBy($this->name, $this->order)
-                    ->search(trim($this->searchs))
+                    ->search(trim($this->searchiTem()))
                     ->paginate($this->sort),
             ]
         )->extends('layouts.user')

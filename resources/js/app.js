@@ -8,6 +8,7 @@ Alpine.start();
 window.$ = require("jquery");
 window.Swal = require("sweetalert2");
 window.toastr = require("toastr");
+window.PDFObject=require('pdfobject');
 
 import "admin-lte/plugins/bootstrap/js/bootstrap.bundle";
 import "admin-lte/dist/js/adminlte.min.js";
