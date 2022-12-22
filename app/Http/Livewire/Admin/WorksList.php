@@ -12,6 +12,9 @@ class WorksList extends Component
 
     protected $paginationTheme = "bootstrap";
     public  $search = "";
+    public $status;
+    public $categorie;
+    public $faculte;
     public $check;
     public $sort = 25;
     public  $selection = [];
@@ -57,6 +60,15 @@ class WorksList extends Component
     {
         return view('livewire.admin.works-list', [
             'travaux' => travail::search(trim($this->search))
+                ->when($this->status, function($q){
+                    $q->where('status',$this->status);
+                })
+                ->when($this->categorie, function($q){
+                    $q->where('categorie',$this->categorie);
+                })->when($this->faculte, function($q){
+                    $q->where('faculte',$this->faculte);
+                })
+                
                 ->paginate($this->sort),
         ])
             ->extends('layouts.admin')
