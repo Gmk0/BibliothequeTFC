@@ -14,8 +14,8 @@ class ConsultationFactory extends Factory
     public function definition()
     {
         return [
-            "users_id" => $this->faker->numberBetween(1, 80),
-            "travails_id" => $this->faker->numberBetween(50, 150),
+            "users_id" => $this->faker->numberBetween(1, 100),
+            "travails_id" => $this->faker->numberBetween(1, 600),
             "created_at" => $this->faker->dateTimeBetween('now', '10 months'),
             //
         ];

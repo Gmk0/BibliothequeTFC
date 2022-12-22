@@ -8,22 +8,21 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title> BIBILIOTHE UCC</title>
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('css/styleNav.css')}}">
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
+    <link rel="stylesheet" href="{{asset('bootstrap/css/bootstrap.css')}}">
+    <script src="{{asset('bootstrap/js/bootstrap.bundle.js')}}"></script>
     @livewireStyles
     <link rel="stylesheet" href="stylefull.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-
+    @yield('style')
 </head>
 
-<body class="" style="background:#F5EFEF;">
+<body class="" style="background:#f4f2f2;">
 
-    <x-navbarUser />
+    <x-navbarBootstrap />
 
-    <div>
-
-    </div>
-
-    <div class="mt-2">
+    <div class="">
 
 
         @yield("content")

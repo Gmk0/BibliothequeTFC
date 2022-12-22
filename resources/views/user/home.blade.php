@@ -1,7 +1,8 @@
 @extends("layouts.user")
 
 @section("content")
-<section class=" container-fluid  mb-3">
+
+<div class="rounded mb-3">
     <div id="carouselBasicExample" class="carousel slide carousel-fade" data-ride="carousel">
         <!-- Indicators -->
         <div class="carousel-indicators">
@@ -56,31 +57,41 @@
             <span class="visually-hidden">Next</span>
         </button>
     </div>
-</section>
-
-
-<div class="container-fluid  rounded bg-white  p-3">
-
-
-    <div class="row mt-5 justify-content-between">
-        <div class="col-md-4 ">
-            <img src="{{asset('images/read2.png')}}" width="600px" alt="" class="rounded">
-        </div>
-        <div class="col-md-6 shadow m-5 p-3  bg-white rounded">
-            <h4 class="text-center">Decouvertes</h4>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, sit. Porro dolor dolores, minus enim
-                pariatur, optio iure reprehenderit assumenda neque harum velit corporis beatae quaerat asperiores
-                libero. Aliquam, sit?</p>
-
-
-        </div>
-    </div>
-
 </div>
 
-<section class="container-fluid   p-2 rounded">
 
-    <div class="m-2">
+
+<div class="container mb-4   rounded  p-3">
+
+
+    <h2 class="mb-3">Dommaine d'expertise</h2>
+
+    <div class="container">
+        <div class="row">
+            @for ($i = 0; $i < 3; $i++) <div class="col-md-4">
+                <div class="card border-secondary shadow">
+                    <img class="card-img-top" src="{{asset('images/read2.png')}}" alt="Title">
+                    <div class="card-body">
+                        <h4 class="card-title">INFORMATIQUE</h4>
+
+                        <p class="card-text">Text</p>
+
+                    </div>
+                </div>
+        </div>
+        @endfor
+
+
+    </div>
+</div>
+ 
+  
+
+
+
+<div class="container mt-4 mb-4">
+
+    <div>
         <h3 class="text-start">Last Publication</h3>
     </div>
 
@@ -103,8 +114,8 @@
 
 
     </div>
-</section>
-
+</div>
+{{-- 
 <section class="container  px-3">
     <div class="mb-5">
         <h3 class="text-start">Domaine D'Expertise</h3>
@@ -122,6 +133,7 @@
     @endfor
 
     </div>
-</section>
 
+</section>
+--}}
 @endsection

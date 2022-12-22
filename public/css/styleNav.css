@@ -1,0 +1,39 @@
+
+.actives{
+
+    border-bottom: 1px solid #eeff00c3 !important;
+}
+
+.register{
+    border-radius:20px !important;
+}
+
+
+.navbar  a{
+    font-size: 18px;
+    font-weight: 500;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.navbar a:hover{
+   
+    border-bottom: 1px solid #eeff00c3  !important;
+    transition: all 0.3s;
+}
+.login{
+
+    border: 1px solid #ffff00 !important;
+    border-radius: 10px !important;
+
+}
+.login:hover{
+    background-color: #ffff00;
+    color: #000;
+}
+
+.carousel-caption {
+    position: absolute;
+
+    z-index: 10;
+    top: 100px !important;
+    text-align: center;
+  }

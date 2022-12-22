@@ -50,9 +50,11 @@
 
 @extends('layouts.user')
 @section('content')
-<div class="row justify-content-center m-3">
+
+<div class="container">
    
-    <div class="card">
+  <div class="row justify-content-center m-3">
+    <div class="card col-md-6">
       <div class="card-body login-card-body">
 
         <p class="login-box-msg">Sign in to start your session</p>
@@ -116,5 +118,7 @@
       </div>
       <!-- /.login-card-body -->
     </div>
+  </div>
+    
   </div>
 @endsection
