@@ -5,12 +5,40 @@
 
         <div class="ROW">
             <div class="col-md-4">
-                <button class="btn btn-outline-primary" data-toggle="modal" data-target="#modal-lg">
-                    Ajouter
-                </button>
+              
             </div>
         </div>
 
+        <div class="row">
+            <div class="col-md-3">
+                <select class="form-control form-control-sm" name="" id="categorie" wire:model.defer="categorie"  onchange="changeCategorie('categorie','categorie')">
+                    <option value="">Categorie</option>
+                    <option value="THESE">THESE</option>
+                    <option value="MEMOIRE">MEMOIRE</option>
+                    <option value="TFC"> TFC</option>
+                  
+                </select>
+            </div>
+            <div class="col-md-3">
+                <select class="form-control form-control-sm " name="" id="categorie" wire:model.debounce.800ms="categorie"  onchange="changeCategorie('categorie','categorie')">
+                    <option value="">categorie</option>
+                    <option value="THESE">THESE</option>
+                    <option value="MEMOIRE">MEMOIRE</option>
+                    <option value="TFC"> TFC</option>
+                  
+                </select>
+            </div>
+            <div class="col-md-3">
+                <select class="form-control form-control-sm" name="" id="categorie" wire:model.defer="faculte"  onchange="changeCategorie('categorie','categorie')">
+                    <option value="">Faculte</option>
+                    <option value="THESE">THESE</option>
+                    <option value="MEMOIRE">MEMOIRE</option>
+                    <option value="TFC"> TFC</option>
+                  
+                </select>
+            </div>
+           
+        </div>
 
     </div>
     <div x-data="{selection: @entangle('selection').defer, selectAll : false,
@@ -35,6 +63,15 @@
                         <h3 class="card-title">Travail</h3>
 
                         <div class="card-tools d-flex">
+                            <div class="input-group input-group-sm col-md-3">
+
+                                <select class="form-control" name="" id="" wire:model.debounce.800ms="status">
+                                    <option value="">all</option>
+                                    <option value="1">active</option>
+                                    <option value="0">Desactiver</option>
+            
+                                </select>
+                            </div>
                             <div class="input-group input-group-sm col-md-3">
 
                                 <select class="form-control" name="" id="" wire:model.debounce.800ms="sort">

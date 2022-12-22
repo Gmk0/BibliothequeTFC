@@ -37,7 +37,7 @@
                         </div>
                         <div class="">
                             <label for="" class="form-label">Categore</label>
-                            <select class="form-control " name="" id="" wire:model.debounce.500ms="categorie">
+                            <select class="form-control " name="" id="categorie" wire:model.defer="categorie"  onchange="changeCategorie('categorie','categorie')">
                                 <option value="">Categorie</option>
                                 <option value="THESE">THESE</option>
                                 <option value="MEMOIRE">MEMOIRE</option>
@@ -57,7 +57,7 @@
                         </div>
                         <div class="">
                             <label for="" class="form-label">Order By</label>
-                            <select class="form-control " name="" id="" wire:model.debounce.800ms="name">
+                            <select class="form-control " name="" id="" wire:model.debounce.800ms="name" onchange="change('')">
                                 <option selected>Select one</option>
                                 <option value="sujet">SUJET</option>
                                 <option value="created_at">ANNEE ETUDES</option>
@@ -77,7 +77,7 @@
                         </div>
                     </div>
                     <button id="submit" class="btn btn-outline-primary">Submit</button>
-                    <button id="submit" class="btn btn-outline-warning">Clear Filtres</button>
+                    <button id="submit" class="btn btn-outline-warning" wire:click="clearFiltre()">Clear Filtres</button>
                 </div>
             </div>
            
@@ -122,10 +122,18 @@
 
             <div class="row justify-content-center">
                 <div class="col-lg-10 mb-3">
-                    @empty(!$searchs)
-                      
-                    <h5 class="float-start text-gray-400"> Resultat for  : "{{$searchs}}"</h5>  
+                    <div class="row justify-content-center">
+                    @empty(!$searchs)  
+                    <h5 class="float-start text-gray-400"> Resultat for  : "{{$searchs}}"</h5>
                     @endempty
+                    @empty(!$categorie)
+                    <h5 class="float-start text-gray-400"> Categorie: "{{$categorie}}"</h5>    
+                    @endempty
+                    @empty(!$faculte)
+                    <h5 class="float-start text-gray-400"> Domaine: "{{$faculte}}"</h5>    
+                    @endempty
+                    </div>
+                    
                         
                    
                 </div>
@@ -135,7 +143,7 @@
                     <h5 class=" float-start text-gray-500">RESULTAT : {{count($count)}}</h5> 
                     <div class="float-end">
                         <select class="form-control " name="" id="" wire:model.debounce.800ms="sort">
-                            <option selected>Select one</option>
+                            <option value="5">Select one</option>
                             <option value="10">10</option>
                             <option value="50">50</option>
                             <option value="75">75</option>
@@ -186,17 +194,22 @@
 const searchButton = document.getElementById('search-button');
 const searchInput = document.getElementById('search-input');
 const buttonFiltre=document.getElementById('submit');
+let categorie = document.getElementById('categorie');
+
 const fac= document.getElementById('faculte');
 searchButton.addEventListener('click', () => {
+
   const inputValue = searchInput.value;
   @this.searchs=inputValue;
+
 });
 
 
 buttonFiltre.addEventListener('click',()=>{
     const faculte = fac.value;
-    document.getElementById('filtre').clicked;
     @this.faculte=faculte;
+    @this.categorie=categorie.value;
+
 })
 searchInput.addEventListener('change', () => {
     const inputValue = searchInput.value;
@@ -205,5 +218,12 @@ searchInput.addEventListener('change', () => {
     }
    
 })
+function changeCategorie(input){
+
+    const field = document.getElementById(input).value;
+    if (field == "") {
+        @this.categorie=field;
+    } 
+}
     </script>
 @endsection

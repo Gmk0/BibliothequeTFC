@@ -22,7 +22,7 @@
           <!-- Left links -->
           <ul class="navbar-nav ms-auto mb-2 mr-lg-2 mb-lg-0">
               <li class="nav-item @if(request()->routeIs('home')) actives @endif">
-                  <a class="nav-link " href="#">Accueil</a>
+                  <a class="nav-link " href="{{route('home')}}">Accueil</a>
               </li>
               <li class="nav-item">
                   <a class="nav-link" href="#">Travaux</a>
@@ -51,7 +51,7 @@
                   <span class="">{{Auth::user()->name}}</span>
                 </button>
                 <div class="dropdown-menu">
-                  <a class="dropdown-item" href="#">Action</a>
+                  <a class="dropdown-item" href="{{ route('profile.show') }}">Profile</a>
                   <a class="dropdown-item disabled" href="#">Disabled action</a>
                   <div class="dropdown-divider"></div>
                   <form action="{{ route('logout') }}" method="post">

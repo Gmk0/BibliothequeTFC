@@ -28,9 +28,11 @@ class Recherche extends Component
     ];
 
         
-    public function mount(){
+    public function clearFiltre(){
 
-       
+       $this->searchs="";
+       $this->categorie =null;
+       $this->faculte=null;
     }
     public function viewCount($id)
     {

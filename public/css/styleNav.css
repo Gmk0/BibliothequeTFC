@@ -1,7 +1,10 @@
 
 .actives{
 
-    border-bottom: 1px solid #eeff00c3 !important;
+    border-bottom: 1px solid hsla(194, 100%, 50%, 0.765) !important;
+}
+a.actives:hover{
+    border-bottom: none;
 }
 
 .register{
@@ -16,7 +19,7 @@
 }
 .navbar a:hover{
    
-    border-bottom: 1px solid #eeff00c3  !important;
+    color:  hsla(194, 100%, 50%, 0.765)  !important;
     transition: all 0.3s;
 }
 .login{
