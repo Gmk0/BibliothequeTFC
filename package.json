@@ -29,6 +29,7 @@
     },
     "dependencies": {
         "pdfobject": "^2.2.8",
+        "toast": "^0.5.4",
         "toastr": "^2.1.4"
     }
 }

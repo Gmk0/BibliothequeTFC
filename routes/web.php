@@ -19,9 +19,6 @@ Route::get('/', [EtudiantController::class, 'home'])->name('home');
 
 Route::get('/travail', \App\Http\Livewire\Recherche::class)->name('work');
 
-Route::get('/publisher', function () {
-    return view('user.addTravail');
-})->name("publisher");
 
 Route::middleware([
     'auth:sanctum',
@@ -31,6 +28,10 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+    Route::get('/publisher', function () {
+        return view('user.addTravail');
+    })->name("publisher");
+    
     Route::get('/viewWorks/{id}', \App\Http\Livewire\ViewWorks::class)->name('viewWorks');
 });
 

@@ -98,7 +98,7 @@
                     </div>
 
                     <!-- /.card-header -->
-                    <div class="card-body table-responsive p-0">
+                    <div class="card-body table-responsive">
                         <div class="mailbox-controls">
                             <!-- Check all button -->
                             <input type="checkbox" name="checkbox" class="btn btn-default btn-sm checkbox-toggle"
@@ -134,56 +134,60 @@
                         </div>
                         <!-- /.float-right -->
                     </div>
-                    <table class="table table-hover text-nowrap travail-list">
-                        <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>sujet</th>
-                                <th>Faculte</th>
-                                <th>Categorie</th>
-                                <th>Status</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
-
-                        <tbody>
-                            @forelse ($travaux as $travail )
-                            <tr>
-                                <td><input type="checkbox" name="id" value="{{$travail->id}}" x-model="selection">
-                                </td>
-                                <td>{{$travail->id}}</td>
-                                <td>{{$travail->sujet}}</td>
-                                <td>{{$travail->faculte}}</td>
-                                <td>{{$travail->categorie}}</td>
-                                @if($travail->status ==1)
-                                <td><button class="btn"><span
-                                            class="badge badge-pill badge-success">activer</span></button>
-                                </td>
-                                @else
-                                <td> <button class="btn"><span
-                                            class="badge badge-pill badge-warning">desactiver</span></button>
-                                </td>
-                                @endif
-
-                                <td class="text-center">
-                                    <button class="btn btn-link"
-                                        wire:click="confirmDeletePromo({{$travail->id}},'{{$travail->intitule}}')"><i
-                                            class="fa fa-trash-alt" aria-hidden="true"></i></button>
-                                    <button class="btn btn-link" wire:click="goToEdit({{$travail->id}})"
-                                        data-target="#modal-promotion-edit"><i class="fas fa-edit"></i></button>
-                                </td>
-                            </tr>
-                            @empty
-                            <h4 class="text-center">not data found</h4>
-                            @endforelse
-
-
-                        </tbody>
-                        <tfoot>
-
-                        </tfoot>
-
-                    </table>
+                    <div class="table-responsive">
+                        <table class="table table-hover  travail-list">
+                            <thead>
+                                <tr>
+                                    <th>select</th>
+                                    <th>ID</th>
+                                    <th>sujet</th>
+                                    <th>Faculte</th>
+                                    <th>Categorie</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+    
+                            <tbody>
+                                @forelse ($travaux as $travail )
+                                <tr>
+                                    <td><input type="checkbox" name="id" value="{{$travail->id}}" x-model="selection">
+                                    </td>
+                                    <td>{{$travail->id}}</td>
+                                    <td>{{$travail->sujet}}</td>
+                                    <td>{{$travail->faculte}}</td>
+                                    <td>{{$travail->categorie}}</td>
+                                    @if($travail->status ==1)
+                                    <td><button class="btn"><span
+                                                class="badge badge-pill badge-success">activer</span></button>
+                                    </td>
+                                    @else
+                                    <td> <button class="btn"><span
+                                                class="badge badge-pill badge-warning">desactiver</span></button>
+                                    </td>
+                                    @endif
+    
+                                    <td class="text-center">
+                                        <button class="btn btn-link"
+                                            wire:click="confirmDeletePromo({{$travail->id}},'{{$travail->intitule}}')"><i
+                                                class="fa fa-trash-alt" aria-hidden="true"></i></button>
+                                        <button class="btn btn-link" wire:click="goToEdit({{$travail->id}})"
+                                            data-target="#modal-promotion-edit"><i class="fas fa-edit"></i></button>
+                                    </td>
+                                </tr>
+                                @empty
+                                <h4 class="text-center">not data found</h4>
+                                @endforelse
+    
+    
+                            </tbody>
+                            <tfoot>
+    
+                            </tfoot>
+    
+                        </table>
+                    </div>
+                    
 
                 </div>
 

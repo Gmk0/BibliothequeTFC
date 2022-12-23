@@ -34,7 +34,7 @@
                   <a class="nav-link dropdown-toggle @if(request()->routeIs('work')) actives @endif" href="#" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Travaux</a>
                   <div class="dropdown-menu" aria-labelledby="dropdownId">
                     <a class="dropdown-item" href="{{route('work')}}">Consulter</a>
-                    <a class="dropdown-item" href="#">Consulter</a>
+                    <a class="dropdown-item" href="{{route('publisher')}}">publier</a>
                   </div>
                 </li>
               

@@ -67,7 +67,7 @@ class WorksList extends Component
                     $q->where('categorie',$this->categorie);
                 })->when($this->faculte, function($q){
                     $q->where('faculte',$this->faculte);
-                })
+                })->orderBy('created_at','desc')
                 
                 ->paginate($this->sort),
         ])

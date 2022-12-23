@@ -41,10 +41,16 @@ class Travail extends Component
             "etudiant" => $this->travail['etudiant'],
             "annnee_etudes" => $this->travail['annee'],
             "nbrs_pages" => $this->travail['pages'],
-            "path_document" => $fileName
+            "path_document" => $fileName,
+            "status"=>0,
+            "viewCounter"=>0
         ];
         ModelsTravail::create($data);
         $this->travail = [];
         $this->file = "";
+        $this->dispatchBrowserEvent("showSuccessMessage", [
+            "messages" => "les document a ete bien envoyer"
+        ]);
     }
+    
 }

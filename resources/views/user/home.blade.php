@@ -18,7 +18,7 @@
             <div class="carousel-item active">
                 <img src="{{asset('images/bg.png')}}" height="600px" class="d-block w-100" alt="Sunset Over the City" />
                 <div class="carousel-caption d-none d-md-block">
-                    <h5>Painmain</h5>
+                    <h5>PLUSIEURES DOMAINES </h5>
                     <p>
                         Nulla vitae elit libero, a pharetra augue mollis interdum.
                     </p>
@@ -29,7 +29,7 @@
             <div class="carousel-item">
                 <img src="{{asset('images/bg.png')}}" height="600px" class="d-block w-100" alt="Canyon at Nigh" />
                 <div class="carousel-caption d-none d-md-block">
-                    <h5>les Pains</h5>
+                    <h5>PLUS DE 10000 TRAVAUX</h5>
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     </p>
