@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Imports\EtudiantsImport;
 use App\Exports\EtudiantsExport;
+use App\Models\domaineExpertise;
 use App\Models\travail;
 
 class EtudiantController extends Controller
@@ -36,8 +37,10 @@ class EtudiantController extends Controller
     }
     public function home()
     {
+        $domaines = domaineExpertise::limit(4)->get();
         return view('user.home', [
             'lastTravails' => travail::orderBy('updated_at')->paginate('8'),
+            'domaines'=>$domaines,
         ]);
     }
 }

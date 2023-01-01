@@ -16,6 +16,8 @@ class CreateDomaineExpertisesTable extends Migration
         Schema::create('domaine_expertises', function (Blueprint $table) {
             $table->id();
             $table->string("intitule");
+            $table->string("image")->nullable();
+            $table->string("description")->nullable();
             $table->boolean("status");
             $table->timestamps();
         });

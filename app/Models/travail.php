@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class travail extends Model
 {
@@ -28,5 +29,10 @@ class travail extends Model
             $query->orWhere('etudiant', 'like', $term);
             $query->orWhere('categorie', 'like', $term);
         });
+    }
+
+    public function domaine():BelongsTo
+    {
+        return $this->belongsTo(domaineExpertise::class);
     }
 }

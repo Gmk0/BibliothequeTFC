@@ -40,6 +40,7 @@
                                 <tr>
                                     <th>ID</th>
                                     <th>intitule</th>
+                                    <th>Images</th>
                                     <th>Status</th>
                                     <th>Action</th>
                                 </tr>
@@ -49,6 +50,7 @@
                                 <tr>
                                     <td>{{$domaines->id}}</td>
                                     <td>{{$domaines->intitule}}</td>
+                                    <td><img src="{{asset('storages/domaines/'.$domaines->image)}}" class="img-thumbnail" width="" alt=""></td>
                                     @if($domaines->status ==1)
                                     <td><button class="btn"><span
                                                 class="badge badge-pill badge-success">desactiver</span></button>
@@ -61,7 +63,7 @@
 
                                     <td class="text-center">
                                         <button class="btn btn-link"
-                                            wire:click="confirmDeletePromo({{$domaines->id}},'{{$domaines->intitule}}')"><i
+                                            wire:click='confirmDelete({{$domaines->id}},"{{$domaines->intitule}}")'><i
                                                 class="fa fa-trash-alt" aria-hidden="true"></i></button>
                                         <button class="btn btn-link" wire:click="goToEdit({{$domaines->id}})"
                                             data-target="#modal-promotion-edit"><i class="fas fa-edit"></i></button>
@@ -99,11 +101,43 @@
                             <label for="name" class="col-md-12 col-form-label ">{{ __('domaines') }}</label>
 
                             <div class="col-md-12">
-                                <input id="name" type="text"
-                                    class="form-control @error('domaines') is-invalid @enderror" autocomplete="name"
-                                    autofocus wire:model.defer="domaines">
+                                <input id="name" type="text" class="form-control @error('" domaines.intitule')
+                                    is-invalid @enderror" autocomplete="name" autofocus
+                                    wire:model.defer="domaines.intitule">
 
                                 @error('domaines')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="desc" class="col-md-12 col-form-label ">{{ __('description') }}</label>
+
+                            <div class="col-md-12">
+
+                                <textarea name="" id="desc" cols="15" rows="5"
+                                    class="form-control @error('domaines.description') is-invalid @enderror" autofocus
+                                    wire:model.defer="domaines.description">
+
+                                    </textarea>
+
+                                @error('domaines')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="file" class="col-md-12 col-form-label ">{{ __('image') }}</label>
+
+                            <div class="col-md-12">
+                                <input id="file" type="file" class="form-control @error('file') is-invalid @enderror"
+                                    autocomplete="name" autofocus wire:model.defer="file">
+
+                                @error('file')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
@@ -113,7 +147,7 @@
                         <div class="modal-footer justify-content-between">
                             <button type="button" class="btn btn-danger" data-dismiss="modal"
                                 wire:click="cleanModal()">Close</button>
-                            <button type="submit" class="btn btn-primary">Save</button>
+                            <button type="submit" wire:loading.attr='disabled' class="btn btn-primary">Save</button>
                         </div>
 
 
@@ -139,9 +173,24 @@
         "closeButton":true,
         "positionClass":"toast-bottom-right",
         });
-        toastr.success(event.detail.message);
-
        
     });
+
+    
+ window.addEventListener('showWarningMessage', event=> {
+        Swal.fire({
+        title: event.detail.message.title,
+        text: event.detail.message.text,
+        icon: event.detail.message.type,
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Continuer'
+        }).then((result) => {
+        if (result.isConfirmed) {
+        @this.deleteDomaines(event.detail.message.data.id)
+        }
+        })
+});
 </script>
 @endsection

@@ -68,18 +68,21 @@
 
     <div class="container">
         <div class="row">
-            @for ($i = 0; $i < 3; $i++) <div class="col-md-4">
-                <div class="card border-secondary shadow">
-                    <img class="card-img-top" src="{{asset('images/read2.png')}}" alt="Title">
+            @foreach ($domaines as $item)
+                
+            
+            <div class="col-md-4">
+                <div class="card shadow">
+                    <img class="card-img-top" src="{{asset('storage/domaines/'.$item->image)}}" alt="Title">
                     <div class="card-body">
-                        <h4 class="card-title">INFORMATIQUE</h4>
+                        <h4 class="card-title">{{$item->intitule}}</h4>
 
                         <p class="card-text">Text</p>
 
                     </div>
                 </div>
         </div>
-        @endfor
+        @endforeach
 
 
     </div>

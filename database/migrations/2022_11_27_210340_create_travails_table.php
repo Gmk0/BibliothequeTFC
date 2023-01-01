@@ -25,7 +25,8 @@ class CreateTravailsTable extends Migration
             $table->string("path_document");
             $table->boolean("status");
             $table->bigInteger("viewCounter");
-            $table->foreignId('domaine_expertises_id')->nullable();
+            $table->unsignedBigInteger("domaine_expertises_id")->nullable();
+            $table->foreign("domaine_expertises_id")->references('id')->on("domaine_expertises");
             $table->timestamps();
         });
     }
