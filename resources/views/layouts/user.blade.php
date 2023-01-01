@@ -31,7 +31,7 @@
 
 
 
-    <x-Footer />
+    <x-footer />
 
 
     @livewireScripts
